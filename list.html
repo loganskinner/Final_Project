@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+    <div class="container">
+      <div style="flex: 1;">
+        <h1>Your Shopping List</h1>
+  
+        <form id="shoppingForm">
+          <ul id="shoppingList"></ul>
+  
+          <input type="text" id="addItemInput" placeholder="Add another item..." />
+  
+          <button type="button" id="addItemBtn">➕ Add Item</button>
+          <button type="button" id="clearListBtn">🗑️ Clear All</button>
+          <button type="button" id="viewGroceryBtn">📋 View Grocery List</button>
+          <button type="button" id="returnToRecipeBtn">🔙 Return to Recipe</button>
+        </form>
+      </div>
+    </div>
+  
+    <script>
+      const ingredients = JSON.parse(localStorage.getItem('shoppingListIngredients')) || [];
+      const shoppingList = document.getElementById('shoppingList');
+      const addItemBtn = document.getElementById('addItemBtn');
+      const addItemInput = document.getElementById('addItemInput');
+  
+      // Render the list
+      function renderList(items) {
+        shoppingList.innerHTML = '';
+        items.forEach((item, index) => {
+          const li = document.createElement('li');
+          const input = document.createElement('input');
+          const removeBtn = document.createElement('button');
+  
+          input.type = 'text';
+          input.value = item;
+  
+          removeBtn.textContent = '❌';
+          removeBtn.onclick = () => {
+            items.splice(index, 1);
+            saveAndRender();
+          };
+  
+          li.appendChild(input);
+          li.appendChild(removeBtn);
+          shoppingList.appendChild(li);
+  
+          // Save changes to input
+          input.addEventListener('input', () => {
+            items[index] = input.value;
+            saveList(items);
+          });
+        });
+      }
+  
+      function saveList(items) {
+        localStorage.setItem('shoppingListIngredients', JSON.stringify(items));
+      }
+  
+      function saveAndRender() {
+        saveList(ingredients);
+        renderList(ingredients);
+      }
+  
+      // Add new item
+      addItemBtn.addEventListener('click', () => {
+        const newItem = addItemInput.value.trim();
+        if (newItem !== '') {
+          ingredients.push(newItem);
+          addItemInput.value = '';
+          saveAndRender();
+        }
+      });
+       document.getElementById('clearListBtn').addEventListener('click', () => {
+          if (confirm("Are you sure you want to clear the entire list?")) {
+            ingredients.length = 0;
+            saveAndRender();
+          }
+        });
+      // Initialize
+      renderList(ingredients);
+      // View grocery list page
+      document.getElementById('viewGroceryBtn').addEventListener('click', () => {
+        window.open('final.html', '_blank');
+      });
+
+      document.getElementById('returnToRecipeBtn').addEventListener('click', () => {
+        
+        window.location.href = 'recipes.html';
+      });
+  window.addEventListener('load', () => {
+  const savedMeal = localStorage.getItem('selectedMealType');
+  const savedIndex = localStorage.getItem('selectedRecipeIndex');
+
+  //go back to same recipe
+  if (savedMeal && savedIndex && allRecipes[savedMeal]) {
+    mealTypeSelect.value = savedMeal;
+
+    
+    const event = new Event('change');
+    mealTypeSelect.dispatchEvent(event);
+
+    
+    setTimeout(() => {
+      recipeSelect.value = savedIndex;
+      recipeSelect.dispatchEvent(new Event('change'));
+    }, 100);
+  }
+  });
+    </script>
+  </body>
+  
+</html>

@@ -1,0 +1,228 @@
+{
+    "breakfast": [
+      {
+        "Name": "Pancakes",
+        "url": "https://www.bbcgoodfood.com/recipes/fluffy-american-pancakes",
+        "Description": "Fluffy American-style pancakes served with syrup.",
+        "Author": "Good Food Team",
+        "Ingredients": [
+          "200g self-raising flour",
+          "1½ tsp baking powder",
+          "1 tbsp caster sugar",
+          "3 large eggs",
+          "25g melted butter",
+          "200ml milk"
+        ],
+        "Method": [
+          "Mix dry ingredients in a bowl.",
+          "Whisk eggs, butter, and milk separately, then combine.",
+          "Fry ladlefuls in a non-stick pan until golden."
+        ]
+      },
+      {
+        "Name": "Avocado Toast",
+        "url": "https://www.bbcgoodfood.com/recipes/avocado-toast",
+        "Description": "A quick and healthy breakfast made with ripe avocados and sourdough.",
+        "Author": "Sarah Cook",
+        "Ingredients": [
+          "2 slices sourdough bread",
+          "1 ripe avocado",
+          "Salt and pepper",
+          "Chili flakes (optional)",
+          "Lemon juice"
+        ],
+        "Method": [
+          "Toast the bread.",
+          "Mash the avocado with lemon juice, salt, and pepper.",
+          "Spread on toast and top with chili flakes if using."
+        ]
+      },
+      {
+        "Name": "Berry Smoothie Bowl",
+        "url": "https://www.bbcgoodfood.com/recipes/berry-smoothie-bowl",
+        "Description": "A vibrant bowl of blended berries, banana, and toppings.",
+        "Author": "Anna Glover",
+        "Ingredients": [
+          "1 frozen banana",
+          "100g frozen mixed berries",
+          "100ml almond milk",
+          "Toppings: granola, chia seeds, sliced fruit"
+        ],
+        "Method": [
+          "Blend banana, berries, and almond milk until smooth.",
+          "Pour into a bowl and add toppings of your choice."
+        ]
+      },
+      {
+        "Name": "Egg Muffins",
+        "url": "https://www.bbcgoodfood.com/recipes/egg-breakfast-muffins",
+        "Description": "Protein-packed egg muffins perfect for on-the-go breakfasts.",
+        "Author": "Tom Kerridge",
+        "Ingredients": [
+          "6 eggs",
+          "100g spinach",
+          "50g feta cheese",
+          "Cherry tomatoes",
+          "Salt and pepper"
+        ],
+        "Method": [
+          "Preheat oven to 180°C.",
+          "Whisk eggs and stir in chopped spinach, feta, and tomatoes.",
+          "Pour into muffin tins and bake for 15-20 minutes."
+        ]
+      }
+    ],
+    "lunch": [
+      {
+        "Name": "Grilled Chicken Caesar Salad",
+        "url": "https://www.bbcgoodfood.com/recipes/grilled-chicken-caesar-salad",
+        "Description": "Classic Caesar salad with grilled chicken for a hearty lunch.",
+        "Author": "Jane Doe",
+        "Ingredients": [
+          "2 chicken breasts",
+          "1 romaine lettuce",
+          "50g croutons",
+          "Parmesan shavings",
+          "Caesar dressing"
+        ],
+        "Method": [
+          "Grill the seasoned chicken breasts until cooked.",
+          "Chop lettuce and toss with dressing and croutons.",
+          "Top with sliced chicken and Parmesan."
+        ]
+      },
+      {
+        "Name": "Tuna Wrap",
+        "url": "https://www.bbcgoodfood.com/recipes/tuna-wrap",
+        "Description": "Quick tuna wrap with crisp veggies and mayo.",
+        "Author": "Emily Smith",
+        "Ingredients": [
+          "1 can tuna",
+          "1 tbsp mayo",
+          "Lettuce",
+          "Grated carrot",
+          "Tortilla wraps"
+        ],
+        "Method": [
+          "Mix tuna and mayo.",
+          "Layer on wrap with lettuce and carrot.",
+          "Wrap tightly and serve."
+        ]
+      },
+      {
+        "Name": "Tomato Basil Soup",
+        "url": "https://www.bbcgoodfood.com/recipes/tomato-basil-soup",
+        "Description": "Rich and creamy tomato soup with a touch of basil.",
+        "Author": "Olivia Green",
+        "Ingredients": [
+          "1 tbsp olive oil",
+          "1 onion, chopped",
+          "2 garlic cloves",
+          "800g canned tomatoes",
+          "Fresh basil"
+        ],
+        "Method": [
+          "Sauté onion and garlic in oil.",
+          "Add tomatoes and simmer for 15 minutes.",
+          "Blend until smooth and stir in chopped basil."
+        ]
+      },
+      {
+        "Name": "Quinoa Salad",
+        "url": "https://www.bbcgoodfood.com/recipes/quinoa-salad",
+        "Description": "Healthy and filling salad with quinoa, cucumber, and feta.",
+        "Author": "James Martin",
+        "Ingredients": [
+          "200g cooked quinoa",
+          "1 cucumber, diced",
+          "100g feta cheese",
+          "Cherry tomatoes",
+          "Lemon juice, olive oil"
+        ],
+        "Method": [
+          "Mix all ingredients in a bowl.",
+          "Drizzle with lemon juice and olive oil.",
+          "Serve chilled."
+        ]
+      }
+    ],
+    "dinner": [
+      {
+        "Name": "Spaghetti Bolognese",
+        "url": "https://www.bbcgoodfood.com/recipes/spaghetti-bolognese",
+        "Description": "A hearty Italian classic perfect for dinner.",
+        "Author": "Chef Luigi",
+        "Ingredients": [
+          "400g spaghetti",
+          "500g minced beef",
+          "1 onion, chopped",
+          "2 garlic cloves, crushed",
+          "400g canned tomatoes",
+          "2 tbsp tomato purée",
+          "Olive oil, salt, pepper"
+        ],
+        "Method": [
+          "Cook spaghetti as per instructions.",
+          "Fry onion and garlic, add beef and brown.",
+          "Stir in tomatoes and purée, simmer 20 mins.",
+          "Serve sauce over spaghetti."
+        ]
+      },
+      {
+        "Name": "Vegetable Stir Fry",
+        "url": "https://www.bbcgoodfood.com/recipes/veggie-stir-fry",
+        "Description": "A colorful, quick stir-fry packed with veggies.",
+        "Author": "Ella Woods",
+        "Ingredients": [
+          "1 tbsp sesame oil",
+          "1 red pepper",
+          "1 carrot",
+          "100g broccoli",
+          "2 tbsp soy sauce",
+          "1 garlic clove"
+        ],
+        "Method": [
+          "Heat oil and fry garlic.",
+          "Add sliced vegetables and stir-fry for 5-6 minutes.",
+          "Add soy sauce and serve hot."
+        ]
+      },
+      {
+        "Name": "Chicken Tikka Masala",
+        "url": "https://www.bbcgoodfood.com/recipes/chicken-tikka-masala",
+        "Description": "Creamy and spiced chicken curry, a British-Indian favorite.",
+        "Author": "Ravi Kapoor",
+        "Ingredients": [
+          "500g chicken breast",
+          "1 onion",
+          "100g yogurt",
+          "3 tbsp tikka masala paste",
+          "200ml cream",
+          "Coriander"
+        ],
+        "Method": [
+          "Marinate chicken in yogurt and tikka paste.",
+          "Cook onions, then add chicken and cook through.",
+          "Stir in cream, garnish with coriander."
+        ]
+      },
+      {
+        "Name": "Baked Salmon with Veggies",
+        "url": "https://www.bbcgoodfood.com/recipes/baked-salmon-vegetables",
+        "Description": "Healthy baked salmon with roasted seasonal vegetables.",
+        "Author": "Liam Stone",
+        "Ingredients": [
+          "2 salmon fillets",
+          "1 zucchini",
+          "1 red onion",
+          "Cherry tomatoes",
+          "Olive oil, lemon juice"
+        ],
+        "Method": [
+          "Preheat oven to 200°C.",
+          "Place salmon and chopped veggies on a tray.",
+          "Drizzle with olive oil and lemon juice. Bake 20 mins."
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,256 @@
+/* ========== Base Reset & Fonts ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* ========== Layout ========== */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+/* ========== Form Controls ========== */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+select,
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ========== Buttons ========== */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#shoppingListBtn,
+#addItemBtn,
+#clearListBtn,
+#viewGroceryBtn,
+#returnToRecipeBtn {
+    margin-top: 10px;
+}
+
+#addItemBtn {
+    background-color: #007BFF;
+    color: white;
+}
+
+#clearListBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#viewGroceryBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#returnToRecipeBtn {
+    background-color: #2196F3;
+    color: white;
+}
+
+#shoppingListBtn {
+    background-color: #e67e22;
+    color: white;
+}
+
+/* ========== Recipe Details ========== */
+.recipe-details {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-details ul,
+.recipe-details ol {
+    margin-left: 20px;
+}
+
+/* ========== List Items ========== */
+#shoppingList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+/* ========== Responsive Layout ========== */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .container > div {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .container > div:last-child {
+        margin-right: 0;
+    }
+
+    select, input[type="text"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Home Page Styles */
+.home-btn {
+    background-color: #6c63ff;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+body.home-page, .page-wrapper {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+}
+
+/* Header */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 1rem 0 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Centered content box */
+.welcome-box {
+    background: white;
+    padding: 2rem;
+    margin: 2rem 1rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Call-to-action link */
+.browse-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.browse-link:hover {
+    background-color: #45a049;
+}
+
+/* Footer always at bottom */
+.footer-box {
+    background-color: #ddd;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.vertical-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recipe-details {
+    text-align: left;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+

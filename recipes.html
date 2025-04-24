@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container vertical-flow">
+    <h1>What would you like to eat?</h1>
+
+    <label for="mealType">Choose a meal type:</label>
+    <select id="mealType">
+      <option value="">-- Select --</option>
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+    </select>
+
+    <div id="recipeSection" style="display: none;">
+      <label for="recipeSelect">Choose a recipe:</label>
+      <select id="recipeSelect">
+        <option value="">-- Select a recipe --</option>
+      </select>
+    </div>
+
+    <div id="recipeDetails" class="recipe-details"></div>
+
+    <button id="shoppingListBtn" onclick="window.location.href='list.html'" style="display: none;">
+      🛒 Create Shopping List
+    </button>
+
+    <button class="home-btn" onclick="window.location.href='index.html'">
+      🏠 Return to Home
+    </button>
+  </div>
+
+  <script>
+    let allRecipes = {};
+
+    fetch('recipes.json')
+      .then(response => response.json())
+      .then(data => {
+        allRecipes = data;
+      });
+
+    const mealTypeSelect = document.getElementById('mealType');
+    const recipeSelect = document.getElementById('recipeSelect');
+    const recipeDetails = document.getElementById('recipeDetails');
+    const recipeSection = document.getElementById('recipeSection');
+    const shoppingListBtn = document.getElementById('shoppingListBtn');
+
+    mealTypeSelect.addEventListener('change', function () {
+      const mealType = this.value;
+      recipeSelect.innerHTML = '<option value="">-- Select a recipe --</option>';
+      recipeDetails.innerHTML = "";
+      shoppingListBtn.style.display = "none";
+
+      if (mealType && allRecipes[mealType]) {
+        allRecipes[mealType].forEach((recipe, index) => {
+          const option = document.createElement('option');
+          option.value = index;
+          option.textContent = recipe.Name;
+          recipeSelect.appendChild(option);
+        });
+
+        recipeSection.style.display = 'block';
+      } else {
+        recipeSection.style.display = 'none';
+      }
+    });
+
+    recipeSelect.addEventListener('change', function () {
+      const mealType = mealTypeSelect.value;
+      const selectedIndex = this.value;
+
+      if (selectedIndex !== "") {
+        const recipe = allRecipes[mealType][selectedIndex];
+        localStorage.setItem('shoppingListIngredients', JSON.stringify(recipe.Ingredients));
+        localStorage.setItem('selectedMealType', mealType);
+        localStorage.setItem('selectedRecipeIndex', selectedIndex);
+
+        recipeDetails.innerHTML = `
+          <h2>${recipe.Name}</h2>
+          <h3>Ingredients:</h3>
+          <ul>${recipe.Ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+          <h3>Method:</h3>
+          <ol>${recipe.Method.map(s => `<li>${s}</li>`).join('')}</ol>
+        `;
+
+        shoppingListBtn.style.display = "inline-block";
+      } else {
+        recipeDetails.innerHTML = "";
+        shoppingListBtn.style.display = "none";
+      }
+    });
+
+    
+    window.addEventListener('load', () => {
+    const clearFlag = new URLSearchParams(window.location.search).get('clear');
+
+        if (clearFlag === 'true') {
+            localStorage.removeItem('selectedMealType');
+            localStorage.removeItem('selectedRecipeIndex');
+            localStorage.removeItem('shoppingListIngredients');
+        }
+
+        // Delay load until recipe is fetched 
+        restoreRecipeAfterLoad();
+        });
+        function restoreRecipeAfterLoad() {
+            const savedMeal = localStorage.getItem('selectedMealType');
+            const savedIndex = localStorage.getItem('selectedRecipeIndex');
+
+            if (savedMeal && savedIndex) {
+                
+                const checkDataLoaded = setInterval(() => {
+                if (Object.keys(allRecipes).length > 0 && allRecipes[savedMeal]) {
+                    clearInterval(checkDataLoaded);
+
+                    mealTypeSelect.value = savedMeal;
+                    mealTypeSelect.dispatchEvent(new Event('change'));
+
+                    setTimeout(() => {
+                    recipeSelect.value = savedIndex;
+                    recipeSelect.dispatchEvent(new Event('change'));
+                    }, 100);
+                }
+                }, 50);
+            }
+            }
+  </script>
+</body>
+</html>
